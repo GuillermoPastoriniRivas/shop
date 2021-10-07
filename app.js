@@ -19,7 +19,7 @@ app.use('/public/uploads', express.static(__dirname + '/public/uploads'));
 app.use(errorHandler);
 
 //Routes
-const categoriesRoutes = require('./routes/categories');
+const categoriesRoutes = require('./routes/categories'); 
 const productsRoutes = require('./routes/products');
 const usersRoutes = require('./routes/users');
 const ordersRoutes = require('./routes/orders');
@@ -35,7 +35,7 @@ app.use(`${api}/orders`, ordersRoutes);
 mongoose.connect(process.env.CONNECTION_STRING, {
     useNewUrlParser: true,
     useUnifiedTopology: true,
-    dbName: 'eshop-database'
+    dbName: 'shop'
 })
 .then(()=>{
     console.log('Database Connection is ready...')
@@ -45,7 +45,7 @@ mongoose.connect(process.env.CONNECTION_STRING, {
 })
 
 //Server
-app.listen(3000, ()=>{
+app.listen(5000, ()=>{
 
-    console.log('server is running http://localhost:3000');
-})
+    console.log('server is running http://localhost:5000');
+}) 
